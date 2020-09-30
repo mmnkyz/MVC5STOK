@@ -1,0 +1,40 @@
+﻿@using MVCSTOKTAKIP.Models.Entity
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<TBL_Personel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <h2>PERSONEL LİSTESİ</h2>
+    <a href="/Personel/YeniPersonel" class="btn btn-primary">Yeni Personel Ekle</a>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>PERSONEL ID</th>
+                <th>PERSONEL AD</th>
+                <th>PERSONEL SOYAD</th>
+                <th>DEPARTMAN</th>
+                <th>İŞLEMLER</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@x.PersonelID</td>
+                    <td>@x.PersonelAD</td>
+                    <td>@x.PersonelSOYAD</td>
+                    <td>@x.TBL_Departman.DepartmanAD</td>
+                    <td>
+                        <a href="/Personel/Sil/@x.PersonelID" class="btn btn-danger">Sil</a>
+                        <a href="/Personel/PersonelGetir/@x.PersonelID" class="btn btn-info">Güncelle</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    @Html.PagedListPager((IPagedList)Model, Sayfa => Url.Action("Index", new { Sayfa }))
+</div>

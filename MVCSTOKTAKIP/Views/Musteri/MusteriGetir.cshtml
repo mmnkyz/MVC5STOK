@@ -1,0 +1,31 @@
+﻿@model MVCSTOKTAKIP.Models.Entity.TBL_Musteri
+@{
+    ViewBag.Title = "MusteriGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("MusteriGuncelle", "Musteri", FormMethod.Post))
+{
+    <h2>PERSONEL GÜNCELLEME SAYFASI</h2>
+    <div style="margin-top:15px">
+        @Html.Label("MÜŞTERİ AD")
+        @Html.TextBoxFor(m => m.MusteriAD, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        @Html.Label("MÜŞTERİ SOYAD")
+        @Html.TextBoxFor(m => m.MusteriSOYAD, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        @Html.Label("ŞEHİR")
+        @Html.TextBoxFor(m => m.Sehir, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        @Html.Label("BAKİYE")
+        @Html.TextBoxFor(m => m.Bakiye, new { @class = "form-control" })
+    </div>
+
+    @Html.HiddenFor(m => m.MusteriID)
+    <div style="margin-top:15px">
+        <button class="btn btn-default">Güncelle</button>
+    </div>
+}

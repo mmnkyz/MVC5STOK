@@ -1,0 +1,29 @@
+﻿@model MVCSTOKTAKIP.Models.Entity.TBL_Personel
+@{
+    ViewBag.Title = "YeniPersonel";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <h2>YENİ PERSONEL EKLEME</h2>
+    @using (Html.BeginForm("YeniPersonel", "Personel", FormMethod.Post))
+    {
+        @Html.Label("PERSONEL AD")
+        @Html.TextBoxFor(m => m.PersonelAD, new { @class = "form-control" })
+
+        <div style="margin-top:15px">
+            @Html.Label("PERSONEL SOYAD")
+            @Html.TextBoxFor(m => m.PersonelSOYAD, new { @class = "form-control" })
+        </div>
+
+        <div style="margin-top:15px">
+            @Html.Label("DEPARTMAN")
+            @Html.DropDownListFor(m => m.TBL_Departman.DepartmanID, (List<SelectListItem>)ViewBag.dprtmndrp, new { @class = "form-control" })
+        </div>
+        @Html.HiddenFor(m => m.PersonelID)
+        <div style="margin-top:15px">
+            <button type="submit" class="btn btn-default">Personel Ekle</button>
+        </div>
+    }
+
+</div>

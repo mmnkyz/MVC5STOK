@@ -1,0 +1,57 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>MVC STOK TAKİP ADMİN GİRİŞİ</title>
+    <!-- meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="Art Sign Up Form Responsive Widget, Audio and Video players, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates,
+		Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design" />
+    <!-- /meta tags -->
+    <!-- custom style sheet -->
+    <link href="~/weblogin/css/style.css" rel="stylesheet" />
+    <!-- /custom style sheet -->
+    <!-- fontawesome css -->
+    <link href="~/weblogin/css/fontawesome-all.css" rel="stylesheet" />
+    <!-- /fontawesome css -->
+    <!-- google fonts-->
+    <link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+    <!-- /google fonts-->
+
+</head>
+<body>
+    <h1>MVC STOK TAKİP ADMİN GİRİŞİ</h1>
+    <div class=" w3l-login-form">
+        <h2>Admin Paneli</h2>
+        @using (Html.BeginForm("Index", "Login", FormMethod.Post))
+        {
+            <div class=" w3l-form-group">
+                <label>KULLANICI ADI:</label>
+                <div class="group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" class="form-control" placeholder="KullanıcıAdı" required="required" name="KullaniciAD"/>
+                </div>
+            </div>
+            <div class=" w3l-form-group">
+                <label>ŞİFRE:</label>
+                <div class="group">
+                    <i class="fas fa-unlock"></i>
+                    <input type="password" class="form-control" placeholder="Şifre" required="required" name="Sifre"/>
+                </div>
+            </div>
+            <div class="forgot">
+                <a href="#">Şifremi Unuttum!</a>
+                <p><input type="checkbox">Beni Hatırla</p>
+            </div>
+            <button type="submit">Giriş</button>
+        }
+    </div>
+</body>
+</html>

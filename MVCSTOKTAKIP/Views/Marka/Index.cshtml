@@ -1,0 +1,35 @@
+﻿@using MVCSTOKTAKIP.Models.Entity
+@model List<TBL_Marka>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+    <div class="container">
+        <h2>MARKA LİSTESİ</h2>
+        <a href="/Marka/YeniMarka/" class="btn btn-primary">Yeni Marka Ekle</a>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>MARKA ID</th>
+                    <th>MARKA</th>
+                    <th>İŞLEMLER</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var x in Model)
+                {
+                    <tr>
+
+                        <td>@x.MarkaID</td>
+                        <td>@x.MarkaAD</td>
+                        <td>
+                            <a href="/Marka/Sil/@x.MarkaID" class="btn btn-danger">Sil</a>
+                            <a href="/Marka/MarkaGetir/@x.MarkaID" class="btn btn-info">Güncelle</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>

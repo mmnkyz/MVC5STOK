@@ -1,0 +1,41 @@
+﻿@model MVCSTOKTAKIP.Models.Entity.TBL_Urunler
+@{
+    ViewBag.Title = "UrunGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>ÜRÜN GÜNCELLEME SAYFASI</h2>
+@using (Html.BeginForm("UrunGuncelle", "Urun", FormMethod.Post))
+{
+    @Html.Label("ÜRÜN")
+    @Html.TextBoxFor(m => m.UrunAD, new { @class = "form-control" })
+
+    <div style="margin-top:15px">
+        @Html.Label("MARKA")
+        @Html.DropDownListFor(m => m.TBL_Marka.MarkaID, (List<SelectListItem>) ViewBag.mrkdrp, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        @Html.Label("STOK")
+        @Html.TextBoxFor(m => m.STOK, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        @Html.Label("ALIŞ FİYATI")
+        @Html.TextBoxFor(m => m.ALISF, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        @Html.Label("SATIŞ FİYATI")
+        @Html.TextBoxFor(m => m.SATISF, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        @Html.Label("KATEGORİ")
+        @Html.DropDownListFor(m => m.TBL_Kategori.KategoriID, (List<SelectListItem>)ViewBag.ktgrdrp, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m=>m.UrunID)
+    <div style="margin-top:15px">
+        <button class="btn btn-default">Güncelle</button>
+    </div>
+}

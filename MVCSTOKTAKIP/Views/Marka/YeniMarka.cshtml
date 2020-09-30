@@ -1,0 +1,17 @@
+﻿@model MVCSTOKTAKIP.Models.Entity.TBL_Marka
+@{
+    ViewBag.Title = "YeniMarka";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+    <div class="container">
+        <h2>YENİ MARKA EKLEME</h2>
+        <form method="post">
+            <div class="form-group">
+                <label for="email">MARKA</label>
+                <input type="text" class="form-control" placeholder="Marka Giriniz" name="MarkaAD">
+                @Html.ValidationMessageFor(m=>m.MarkaAD, "", new { @style="color:red; font-size:12px"})
+            </div>
+            <button type="submit" class="btn btn-default">Marka Ekle</button>
+        </form>
+    </div>

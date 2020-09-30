@@ -1,0 +1,13 @@
+﻿@model MVCSTOKTAKIP.Models.Entity.TBL_Kategori
+@{
+    ViewBag.Title = "KategoriGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (@Html.BeginForm("KategoriGuncelle", "Kategori", FormMethod.Post))
+{
+    @Html.Label("KATEGORİ")
+    @Html.TextBoxFor(m=>m.KategoriAD, new { @class="form-control"})
+    @Html.HiddenFor(m=>m.KategoriID)
+    <button style="margin-top:15px" class="btn btn-info">Güncelle</button>
+}

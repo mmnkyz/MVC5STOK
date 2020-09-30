@@ -1,0 +1,73 @@
+﻿@model MVCSTOKTAKIP.Models.Entity.TBL_Urunler
+
+@{
+    ViewBag.Title = "YeniUrun";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("YeniUrun", "Urun", FormMethod.Post))
+{
+    @Html.Label("ÜRÜN ADI")
+    @Html.TextBoxFor(m => m.UrunAD, new { @class = "form-control" })
+
+    <div style="margin-top:15px">
+        @Html.Label("MARKA")
+        @Html.DropDownListFor(m => m.TBL_Marka.MarkaID, (List<SelectListItem>)ViewBag.markadrop, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        @Html.Label("STOK MİKTARI")
+        @Html.TextBoxFor(m => m.STOK, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        @Html.Label("ALIŞ FİYATI")
+        @Html.TextBoxFor(m => m.ALISF, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        @Html.Label("SATIŞ FİYATI")
+        @Html.TextBoxFor(m => m.SATISF, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px">
+        @Html.Label("KATEGORİ")
+        @Html.DropDownListFor(m => m.TBL_Kategori.KategoriID, (List<SelectListItem>)ViewBag.urundrop, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <button type="submit" class="btn btn-default">Ürün Ekle</button>
+    </div>
+
+}
+
+
+@*<div class="container">
+        <h2>YENİ ÜRÜN EKLEME</h2>
+        <form method="post">
+            <div class="form-group">
+                <label for="email">ÜRÜN AD</label>
+                <input type="text" class="form-control" placeholder="Ürün Adı Giriniz.." name="UrunAD">
+            </div>
+            <div class="form-group">
+                <label for="email">MARKA</label>
+                <input type="text" class="form-control" placeholder="Marka Giriniz.." name="MARKA">
+            </div>
+            <div class="form-group">
+                <label for="email">STOK</label>
+                <input type="text" class="form-control" placeholder="Stok Giriniz.." name="STOK">
+            </div>
+            <div class="form-group">
+                <label for="email">ALIŞ FİYATI</label>
+                <input type="text" class="form-control" placeholder="Bakiyeniz" name="ALISF">
+            </div>
+            <div class="form-group">
+                <label for="email">SATIŞ FİYATI</label>
+                <input type="text" class="form-control" placeholder="Bakiyeniz" name="SATISF">
+            </div>
+            <div class="form-group">
+                <label for="email">KATEGORİ</label>
+                <input type="text" class="form-control" placeholder="Bakiyeniz" name="KATEGORI">
+            </div>
+            <button type="submit" class="btn btn-default">Ürün Ekle</button>
+        </form>
+    </div>*@

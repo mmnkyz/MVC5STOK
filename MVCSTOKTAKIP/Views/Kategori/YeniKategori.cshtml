@@ -1,0 +1,17 @@
+﻿@model MVCSTOKTAKIP.Models.Entity.TBL_Kategori
+@{
+    ViewBag.Title = "YeniKategori";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+    <div class="container">
+        <h2>YENİ KATEGORİ EKLEME</h2>
+        <form method="post">
+            <div class="form-group">
+                <label for="email">KATEGORİ</label>
+                <input type="text" class="form-control" placeholder="Kategori Giriniz.." name="KategoriAD">
+                @Html.ValidationMessageFor(m=>m.KategoriAD, "", new { @style="color:Red; font-size:12px"})
+            </div>
+            <button type="submit" class="btn btn-default">Kategori Ekle</button>
+        </form>
+    </div>

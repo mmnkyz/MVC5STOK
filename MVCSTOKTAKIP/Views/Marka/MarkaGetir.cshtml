@@ -1,0 +1,15 @@
+﻿@model MVCSTOKTAKIP.Models.Entity.TBL_Marka
+@{
+    ViewBag.Title = "MarkaGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("MarkaGuncelle", "Marka", FormMethod.Post))
+{
+    @Html.Label("MARKA")
+    @Html.TextBoxFor(x=>x.MarkaAD, new { @class ="form-control"})
+    @Html.HiddenFor(x=>x.MarkaID)
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Güncelle</button>
+    </div>
+}

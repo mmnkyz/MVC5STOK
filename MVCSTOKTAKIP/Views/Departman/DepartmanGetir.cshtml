@@ -1,0 +1,13 @@
+﻿@model MVCSTOKTAKIP.Models.Entity.TBL_Departman
+@{
+    ViewBag.Title = "DepartmanGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("DepartmanGuncelle", "Departman", FormMethod.Post))
+{
+    @Html.Label("DEPARTMAN")
+    @Html.TextBoxFor(m=>m.DepartmanAD, new { @class="form-control"})
+    @Html.HiddenFor(m=>m.DepartmanID)
+    <button style="margin-top:15px" class="btn btn-info">Güncelle</button>
+}

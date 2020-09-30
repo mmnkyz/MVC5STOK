@@ -1,0 +1,30 @@
+﻿@model MVCSTOKTAKIP.Models.Entity.TBL_Satis
+@{
+    ViewBag.Title = "YeniSatis";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("YeniSatis", "Satis", FormMethod.Post))
+{
+    <h2>YENİ SATIŞ EKLEME</h2>
+    <div style="margin-top:15px">
+        @Html.Label("ÜRÜN")
+        @Html.DropDownListFor(m => m.TBL_Urunler.UrunID, (List<SelectListItem>)ViewBag.urundrp, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        @Html.Label("PERSONEL")
+        @Html.DropDownListFor(m => m.TBL_Personel.PersonelID, (List<SelectListItem>)ViewBag.prsnldrp, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        @Html.Label("MÜŞTERİ")
+        @Html.DropDownListFor(m => m.TBL_Musteri.MusteriID, (List<SelectListItem>)ViewBag.mstrdrp, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        @Html.Label("FİYAT")
+        @Html.TextBoxFor(m => m.Fiyat, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.SatisID)
+    <div style="margin-top:15px">
+        <button class="btn btn-default">Yeni Satış</button>
+    </div>
+}
